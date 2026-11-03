@@ -1,0 +1,425 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=1080">
+<title>{{TÍTULO DO LIVRO}}</title>
+<style>
+@font-face{font-family:'Plus Jakarta Sans';font-weight:400;font-style:normal;src:url(data:font/woff2;base64,{{PJS_400}}) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:700;font-style:normal;src:url(data:font/woff2;base64,{{PJS_700}}) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:800;font-style:normal;src:url(data:font/woff2;base64,{{PJS_800}}) format('woff2')}
+@font-face{font-family:'Literata';font-weight:400;font-style:normal;src:url(data:font/woff2;base64,{{LIT_400}}) format('woff2')}
+@font-face{font-family:'Literata';font-weight:700;font-style:normal;src:url(data:font/woff2;base64,{{LIT_700}}) format('woff2')}
+/* ===== MOLDE FIXO v6: nao alterar nada daqui ate FIM DO MOLDE ===== */
+:root{--papel:#FCFBFD;--tinta:#1A1726;--apoio:#6E6A7A;--violeta:#2B1578;--roxo:#4A2FBD;--azul:#2E8DE6;--lima:#efff02}
+@page{size:1080px 1920px;margin:0}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{background:#cfcbd9}
+body{width:1080px;margin:0 auto;font-family:'Literata',serif;font-size:40px;line-height:1.55;color:var(--tinta);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--papel);margin:0 0 28px;break-after:page;page-break-after:always}
+.page:last-child{break-after:auto;page-break-after:auto;margin-bottom:0}
+@media print{html{background:none}.page{margin:0}}
+.dark{background:#2B1578;color:#fff}
+.cor{position:absolute;left:84px;top:186px;width:912px;height:1580px}
+.cor.curto{position:absolute;left:84px;top:600px;width:912px;height:1166px}
+.cor{overflow:hidden}
+.cor>*:first-child{margin-top:0!important}
+.iso{position:absolute;top:64px;left:522px;height:38px;width:auto;opacity:.82}
+.folio{position:absolute;bottom:76px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:26px;line-height:1;color:var(--apoio)}
+.folio.d{right:84px}
+.folio.e{left:84px}
+
+/* abertura */
+.faixa{position:absolute;left:0;top:0;width:1080px;height:520px;background:#ECEAF1}
+.faixa .veu{position:absolute;left:0;top:0;width:100%;height:100%;background:#2B1578;opacity:.9}
+.faixa .cod{position:absolute;left:0;top:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;font:700 30px 'Plus Jakarta Sans',sans-serif;letter-spacing:.08em;color:#8F8AA6}
+.faixa .lf{position:absolute;left:0;bottom:0;width:100%;height:8px;background:var(--lima)}
+.capbloco{margin:0 0 34px}
+.capnum{font:800 28px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.14em;color:var(--roxo);margin:0 0 22px}
+.captit{font:800 100px/1.04 'Plus Jakarta Sans',sans-serif;color:var(--violeta);margin:0;letter-spacing:-.01em;text-wrap:balance}
+
+/* texto */
+.cor p{margin:0 0 20px}
+.cor h2{font:700 44px/1.2 'Plus Jakarta Sans',sans-serif;color:var(--violeta);margin:44px 0 14px}
+.cor h3.fmt{display:flex;align-items:center;gap:16px;font:800 40px/1.2 'Plus Jakarta Sans',sans-serif;color:var(--violeta);margin:40px 0 12px}
+.ich{flex:none;display:inline-flex}
+.cor p.abre{border-left:2px solid var(--roxo);padding:4px 0 4px 28px;font-size:36px;line-height:1.5;margin:6px 0 24px}
+ol.num{margin:0 0 20px;padding-left:52px}
+ol.num li{margin:0 0 6px;font-size:37px;line-height:1.5}
+ol.num li::marker{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;color:var(--roxo)}
+ul.dash{list-style:none;margin:0 0 24px;padding:0}
+ul.dash li{position:relative;padding-left:40px;margin:0 0 8px}
+ul.dash li::before{content:"";position:absolute;left:0;top:.82em;width:22px;height:2px;background:var(--roxo)}
+ul.sq{list-style:none;margin:0;padding:0}
+ul.sq li{position:relative;padding-left:54px;margin:0 0 12px;font-size:34px;line-height:1.5}
+ul.sq li::before{content:"";position:absolute;left:0;top:.5em;width:26px;height:26px;border:2px solid var(--violeta)}
+
+/* boxes */
+.box,.diy{border-left:2px solid var(--roxo);padding:6px 0 6px 36px;margin:32px 0}
+.box .bh{display:flex;align-items:center;gap:16px;font:700 34px/1.2 'Plus Jakarta Sans',sans-serif;color:var(--violeta);margin:0 0 16px}
+.box p{font-size:34px;line-height:1.5;margin:0 0 14px}
+.kick{font:800 22px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.14em;color:var(--roxo);margin:0 0 12px}
+.tempo{display:flex;align-items:center;gap:10px;font:700 22px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--apoio);margin:0 0 16px}
+.diy{font-size:34px;line-height:1.5}
+.diy .bt{font:800 38px/1.2 'Plus Jakarta Sans',sans-serif;color:var(--violeta);margin:0 0 20px}
+.diy .lin{margin:0 0 18px}
+.diy .lab{display:flex;align-items:center;gap:12px;font:700 21px/1.1 'Plus Jakarta Sans',sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--apoio);margin:0 0 6px}
+.diy ul.dash,.diy ol.num{margin:0}
+.diy ul.dash li,.diy ol.num li{margin:0 0 4px}
+.diy .val{margin:0}
+
+/* tabela */
+table.tbl{width:912px;border-collapse:collapse;margin:32px 0 36px;table-layout:fixed}
+table.tbl th{font:700 21px/1.2 'Plus Jakarta Sans',sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--violeta);text-align:left;padding:0 14px 12px 0;border-bottom:2px solid var(--roxo)}
+table.tbl td{font-size:28px;line-height:1.36;padding:12px 14px 12px 0;border-bottom:1px solid rgba(26,23,38,.18);vertical-align:middle}
+table.tbl td.ic{padding-right:6px}
+table.tbl.dense td{padding:8px 14px 8px 0}
+.icc{display:inline-flex}
+
+/* peças */
+.fig{margin:34px 0;text-align:center}
+.fig svg.figsvg{display:block;width:912px;height:auto}
+.fig figcaption{font:400 24px/1.3 'Plus Jakarta Sans',sans-serif;color:var(--apoio);margin-top:16px;text-align:center}
+.slot{width:912px;height:570px;background:#ECEAF1;display:flex;align-items:center;justify-content:center;margin:32px 0}
+.slot span{font:700 30px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.08em;color:#9C98AA}
+
+/* sumário */
+.toctit{font:800 100px/1.04 'Plus Jakarta Sans',sans-serif;color:var(--violeta);margin:0 0 44px}
+.tocrow{display:flex;align-items:center;gap:26px;padding:20px 0;border-bottom:1px solid rgba(26,23,38,.18)}
+.tocrow:first-of-type{border-top:2px solid var(--roxo)}
+.tocrow .tt{flex:1}
+.tocrow .t1{font:800 34px/1.2 'Plus Jakarta Sans',sans-serif;color:var(--violeta)}
+.tocrow .t2{font:400 27px/1.3 'Literata',serif;color:var(--apoio)}
+.tocrow .pg{font:800 34px/1 'Plus Jakarta Sans',sans-serif;color:var(--violeta)}
+
+/* capa */
+.dark>div,.dark>p,.dark>a{position:relative;z-index:1}
+.dark>.moldura{position:absolute;left:48px;top:48px;right:48px;bottom:48px;border:3px solid var(--lima);z-index:1}
+.dark>img.logo-capa,.dark>img.logo-enc{position:relative;z-index:1;display:block}
+.capa-arte{display:flex;justify-content:center}
+.capa-tit{font:800 108px/1.04 'Plus Jakarta Sans',sans-serif;margin:0 0 36px;color:#fff;letter-spacing:-.01em}
+.capa-sub{font-size:40px;line-height:1.45;color:rgba(255,255,255,.86);margin:0}
+
+/* destaque */
+.dlabel{font:800 30px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.14em;color:var(--lima);margin:0 0 44px}
+.dfrase{font:800 76px/1.12 'Plus Jakarta Sans',sans-serif;color:#fff;margin:0 0 44px}
+.dfrase .lm{font-style:normal;color:var(--lima)}
+.dapoio{font:400 34px/1.4 'Literata',serif;color:rgba(255,255,255,.78);margin:0}
+.dark>.dfilete{position:absolute;left:84px;bottom:130px;width:120px;height:8px;background:var(--lima);z-index:1}
+.dark>.marca{position:absolute;z-index:0}
+
+/* encerramento */
+.filete-l{width:120px;height:8px;background:var(--lima);margin-top:30px}
+.enc-frase{font:800 84px/1.08 'Plus Jakarta Sans',sans-serif;color:#fff;display:flex;flex-direction:column}
+.enc-frase .lm2{color:var(--lima)}
+.enc-p{font-size:34px;line-height:1.5;color:rgba(255,255,255,.88);margin:0}
+.tags{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.tag{display:inline-flex;align-items:center;gap:12px;border:2px solid #fff;padding:10px 20px;font:700 26px/1.2 'Plus Jakarta Sans',sans-serif;color:#fff}
+.botao{display:block;background:var(--lima);color:var(--violeta);font:800 38px/1.2 'Plus Jakarta Sans',sans-serif;text-align:center;padding:36px 20px;text-decoration:none}
+.site{display:block;text-align:center;color:#fff;font:700 28px/1.2 'Plus Jakarta Sans',sans-serif;margin-top:22px;text-decoration:none}
+.slogan{display:flex;flex-direction:column;align-items:center;gap:18px}
+.filete-b{width:100%;height:2px;background:rgba(255,255,255,.55)}
+.slogan span{font:800 32px/1 'Plus Jakarta Sans',sans-serif;color:#fff;letter-spacing:.04em}
+
+.cor p.abre .pil{display:inline-block;margin-top:8px;color:var(--apoio);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:28px}
+/* ===== FIM DO MOLDE ===== */
+/* ===== PECAS DESTE LIVRO (zona livre, regras em 13.4.5) ===== */
+
+</style></head>
+<body>
+<div id="dep" style="display:none">
+  <!-- 1. capa       --> <div data-kind="static">{{SECTION DA CAPA}}</div>
+  <!-- 2. sumário    --> <div data-kind="static"><section class="page toc"></section></div>
+  <!-- 3. introdução --> <div class="unit" data-kind="intro" data-id="intro" data-strip="0" data-code="">…</div>
+  <!-- 4. capítulos  --> <div class="unit" data-kind="cap" data-id="1" data-strip="1" data-code="IMG-01">…</div>
+  <!--    …destaque entre capítulos, onde couber: <div data-kind="static">{{SECTION DO DESTAQUE}}</div> -->
+  <!-- 5. anexos     --> <div class="unit" data-kind="anexos" data-id="anexos" data-strip="0" data-code="">…</div>
+  <!-- 6. fim        --> <div data-kind="static">{{SECTION DO ENCERRAMENTO}}</div>
+</div>
+<main id="livro"></main>
+<script>var CFG={
+  "toc":[
+    {"id":"intro","title":"Introdução","sub":"{{uma linha}}","svg":"{{SVG LUCIDE 44px}}"},
+    {"id":"1","title":"{{título do capítulo 1}}","sub":"{{uma linha}}","svg":"{{SVG LUCIDE 44px}}"},
+    {"id":"anexos","title":"Anexos","sub":"{{uma linha}}","svg":"{{SVG LUCIDE 44px}}"}
+  ],
+  "iso_branco":"data:image/png;base64,{{ISOLOGO BRANCO}}",
+  "iso_preto":"data:image/png;base64,{{ISOLOGO PRETO}}"
+};</script>
+<script>
+/* MOTOR DE PAGINACAO v6. Bloco fixo: copiar sem alterar nenhum caractere. */
+(function(){
+var LH=62;
+var dep=document.getElementById('dep');
+var livro=document.getElementById('livro');
+var pages=[], meta=[], unitStart={}, scratch=null;
+
+function mk(tag,cls){var e=document.createElement(tag); if(cls) e.className=cls; return e;}
+function isoImg(branco){var i=mk('img','iso'); i.src=branco?CFG.iso_branco:CFG.iso_preto; i.alt='Pensar Cursos'; return i;}
+function used(cor){var l=cor.lastElementChild; return l?(l.offsetTop+l.offsetHeight):0;}
+function fits(cor){return used(cor)<=cor.clientHeight;}
+function addPage(el,info){livro.appendChild(el); pages.push(el); meta.push(info||{kind:'static'}); return el;}
+
+function newFlowPage(abertura,code,kind){
+  var p=mk('section','page flow'+(abertura?' abertura':''));
+  if(abertura){
+    var f=mk('div','faixa'); f.setAttribute('data-img',code);
+    var v=mk('div','veu'), c=mk('div','cod'), lf=mk('div','lf'); c.textContent=code;
+    f.appendChild(v); f.appendChild(c); f.appendChild(lf); p.appendChild(f);
+  }
+  p.appendChild(isoImg(abertura));
+  var cor=mk('div','cor'+(abertura?' curto':'')); p.appendChild(cor);
+  var fo=mk('div','folio'); p.appendChild(fo);
+  p._cor=cor; p._fo=fo;
+  addPage(p,{kind:kind||'flow',abertura:!!abertura});
+  return p;
+}
+
+function getScratch(){
+  if(!scratch){scratch=mk('div'); scratch.className='cor'; scratch.style.cssText='position:absolute;left:-5000px;top:0;width:912px;height:20000px;visibility:hidden'; document.body.appendChild(scratch);}
+  return scratch;
+}
+
+function sentences(html){
+  var out=[],re=/([.!?”])\s+(?=[A-ZÀ-Ú“\[])/g,last=0,m;
+  while((m=re.exec(html))){ out.push(html.slice(last,m.index+1)); last=m.index+m[0].length; }
+  out.push(html.slice(last));
+  return out;
+}
+
+function splitP(b,cor){
+  var s=sentences(b.innerHTML); if(s.length<2) return null;
+  for(var k=s.length-1;k>=1;k--){
+    var a=b.cloneNode(false); a.innerHTML=s.slice(0,k).join(' ');
+    cor.appendChild(a); var ok=fits(cor); var la=Math.round(a.offsetHeight/LH); cor.removeChild(a);
+    if(!ok||la<2) continue;
+    var r=b.cloneNode(false); r.innerHTML=s.slice(k).join(' ');
+    var sc=getScratch(); sc.appendChild(r); var lr=Math.round(r.offsetHeight/LH); sc.removeChild(r);
+    if(lr<2) continue;
+    return [a,r];
+  }
+  return null;
+}
+
+function splitList(b,cor){
+  var items=[].slice.call(b.children), n=items.length; if(n<4) return null;
+  var st=parseInt(b.getAttribute('start')||'1',10);
+  for(var k=n-2;k>=2;k--){
+    var a=b.cloneNode(false); items.slice(0,k).forEach(function(i){a.appendChild(i.cloneNode(true));});
+    cor.appendChild(a); var ok=fits(cor); cor.removeChild(a);
+    if(!ok) continue;
+    var r=b.cloneNode(false); if(b.tagName==='OL') r.setAttribute('start',st+k);
+    items.slice(k).forEach(function(i){r.appendChild(i.cloneNode(true));});
+    return [a,r];
+  }
+  return null;
+}
+
+function tblWith(b,rows){
+  var t=b.cloneNode(false);
+  var cg=b.querySelector('colgroup'); if(cg) t.appendChild(cg.cloneNode(true));
+  var th=b.tHead; if(th) t.appendChild(th.cloneNode(true));
+  var tb=document.createElement('tbody'); rows.forEach(function(r){tb.appendChild(r.cloneNode(true));}); t.appendChild(tb);
+  return t;
+}
+function splitTable(b,cor){
+  var rows=[].slice.call(b.tBodies[0].rows), n=rows.length; if(n<4) return null;
+  for(var k=n-2;k>=2;k--){
+    var a=tblWith(b,rows.slice(0,k)); cor.appendChild(a); var ok=fits(cor); cor.removeChild(a);
+    if(!ok) continue;
+    return [a,tblWith(b,rows.slice(k))];
+  }
+  return null;
+}
+
+function splitDiy(b,cor){
+  var kids=[].slice.call(b.children), n=kids.length;
+  function mk2(list){var d=b.cloneNode(false); list.forEach(function(i){d.appendChild(i.cloneNode(true));}); return d;}
+  for(var k=n-1;k>=4;k--){
+    var a=mk2(kids.slice(0,k)); cor.appendChild(a); var ok=fits(cor); cor.removeChild(a);
+    if(!ok) continue;
+    var row=kids[k], ol=row.querySelector('ol');
+    if(ol){
+      var items=[].slice.call(ol.children);
+      for(var m=items.length-1;m>=1;m--){
+        var r1=row.cloneNode(true), o1=r1.querySelector('ol');
+        while(o1.children.length>m) o1.removeChild(o1.lastChild);
+        var a2=mk2(kids.slice(0,k)); a2.appendChild(r1);
+        cor.appendChild(a2); var ok2=fits(cor); cor.removeChild(a2);
+        if(!ok2) continue;
+        var r2=row.cloneNode(true), o2=r2.querySelector('ol');
+        for(var q=0;q<m;q++) o2.removeChild(o2.firstChild);
+        o2.setAttribute('start',m+1);
+        var lab=r2.querySelector('.lab'); if(lab) lab.parentNode.removeChild(lab);
+        var rest=mk2(kids.slice(k+1)); rest.insertBefore(r2,rest.firstChild); rest.setAttribute('data-split','none');
+        return [a2,rest];
+      }
+    }
+    var r=mk2(kids.slice(k)); r.setAttribute('data-split','none');
+    return [a,r];
+  }
+  return null;
+}
+
+function splitExer(b,cor){
+  var kids=[].slice.call(b.children), n=kids.length;
+  function mk2(list){var d=b.cloneNode(false); list.forEach(function(i){d.appendChild(i.cloneNode(true));}); return d;}
+  for(var k=n-1;k>=4;k--){
+    var a=mk2(kids.slice(0,k)); cor.appendChild(a); var ok=fits(cor); cor.removeChild(a);
+    if(!ok) continue;
+    var r=mk2(kids.slice(k)); r.setAttribute('data-split','none');
+    var bh=kids[0].cloneNode(true), sv=bh.querySelector('svg'); if(sv) sv.parentNode.removeChild(sv);
+    var sp=bh.querySelector('span'); if(sp) sp.textContent=sp.textContent+' (continuação)';
+    r.insertBefore(bh,r.firstChild);
+    return [a,r];
+  }
+  return null;
+}
+
+function trySplit(b,cor){
+  var ds=b.getAttribute('data-split');
+  if(ds==='exer') return splitExer(b,cor);
+  if(ds==='rows') return splitDiy(b,cor);
+  if(ds==='none') return null;
+  var t=b.tagName;
+  if(t==='P') return splitP(b,cor);
+  if(t==='OL'||t==='UL') return splitList(b,cor);
+  if(t==='TABLE') return splitTable(b,cor);
+  return null;
+}
+
+function paginate(u){
+  var kind=u.getAttribute('data-kind'), id=u.getAttribute('data-id');
+  var abertura=u.getAttribute('data-strip')==='1', code=u.getAttribute('data-code')||'';
+  var queue=[].slice.call(u.children);
+  while(u.firstChild) u.removeChild(u.firstChild);
+  var pg=newFlowPage(abertura,code,kind), cor=pg._cor;
+  unitStart[id]=pages.length;
+  var guard=0;
+  while(queue.length && guard++<5000){
+    var b=queue.shift();
+    cor.appendChild(b);
+    if(fits(cor)) continue;
+    cor.removeChild(b);
+    var parts=trySplit(b,cor);
+    if(parts){ cor.appendChild(parts[0]); queue.unshift(parts[1]); }
+    else if(cor.children.length===0){ cor.appendChild(b); meta[meta.length-1].oversize=true; }
+    else queue.unshift(b);
+    while(cor.children.length>1 && cor.lastElementChild.classList.contains('kwn')){
+      queue.unshift(cor.removeChild(cor.lastElementChild));
+    }
+    if(queue.length){ pg=newFlowPage(false,'',kind); cor=pg._cor; }
+  }
+  meta[meta.length-1].fim=true;
+}
+
+function fillToc(tp){
+  var cor=mk('div','cor');
+  var h=mk('div','toctit'); h.textContent='Sumário'; cor.appendChild(h);
+  CFG.toc.forEach(function(t){
+    var r=mk('div','tocrow');
+    r.innerHTML=t.svg+'<div class="tt"><div class="t1"></div><div class="t2"></div></div><div class="pg"></div>';
+    r.querySelector('.t1').textContent=t.title;
+    r.querySelector('.t2').textContent=t.sub;
+    r.querySelector('.pg').textContent=unitStart[t.id]||'';
+    cor.appendChild(r);
+  });
+  tp.appendChild(isoImg(false)); tp.appendChild(cor);
+  var fo=mk('div','folio'); tp.appendChild(fo); tp._fo=fo; tp._cor=cor;
+}
+
+/* A pagina fixa (capa, sumario, destaque, encerramento) e MOVIDA para o livro,
+   nunca clonada. Copia que fica no deposito escondido mede zero e o editor do
+   portal deixa de achar a folha: o livro chega sem quebra, sem fólio e sem cor. */
+function run(){
+  if(!dep||!livro) return;
+  var units=[].slice.call(dep.children);
+  var tocPage=null;
+  units.forEach(function(u){
+    var kind=u.getAttribute('data-kind');
+    if(kind==='static'){
+      var pg=u.firstElementChild; if(!pg) return;
+      var info={kind:'static'};
+      if(pg.classList.contains('toc')){tocPage=pg; info.kind='toc';}
+      if(pg.classList.contains('capa')) info.kind='capa';
+      if(pg.classList.contains('destaque')) info.kind='destaque';
+      if(pg.classList.contains('enc')) info.kind='enc';
+      addPage(pg,info);
+    } else paginate(u);
+  });
+  if(tocPage) fillToc(tocPage);
+  pages.forEach(function(p,i){
+    var fo=p._fo; if(!fo) return;
+    fo.textContent=String(i+1);
+    fo.className='folio '+((i+1)%2===1?'d':'e');
+  });
+  report();
+  // Montado o livro, o deposito e o rascunho de medida saem do arquivo. Sobra
+  // so o que se ve: uma .page por folha, todas dentro de #livro.
+  if(dep.parentNode) dep.parentNode.removeChild(dep);
+  if(scratch && scratch.parentNode) scratch.parentNode.removeChild(scratch);
+  contrato();
+  document.documentElement.setAttribute('data-ready','1');
+}
+
+function report(){
+  var rep=[];
+  pages.forEach(function(p,i){
+    var m=meta[i], r={n:i+1,kind:m.kind}, cor=p._cor;
+    if(cor && (m.kind==='cap'||m.kind==='intro'||m.kind==='anexos'||m.kind==='toc')){
+      r.fill=Math.round(100*used(cor)/cor.clientHeight);
+      r.over=used(cor)>cor.clientHeight+0.5;
+      r.oversize=!!m.oversize;
+      r.fim=!!m.fim;
+      r.imgs=[].slice.call(p.querySelectorAll('[data-img]')).map(function(e){return e.getAttribute('data-img');});
+      var long=[];
+      [].slice.call(cor.querySelectorAll('p')).forEach(function(q){
+        var lh=parseFloat(getComputedStyle(q).lineHeight)||LH;
+        var lines=Math.round(q.offsetHeight/lh); if(lines>4) long.push(lines+': '+q.textContent.slice(0,60));
+      });
+      r.long=long;
+      var h=cor.querySelector('.captit'); if(h) r.title=h.textContent;
+    }
+    if(m.kind==='destaque'){var f=p.querySelector('.dfrase'); if(f){r.linhas=Math.round(f.offsetHeight/(76*1.12)); r.frase=f.textContent;}}
+    if(m.kind==='capa'||m.kind==='enc'||m.kind==='destaque'){
+      var pr=p.getBoundingClientRect();
+      r.over=[].slice.call(p.children).some(function(e){
+        if(e.classList.contains('marca')) return false;
+        return e.getBoundingClientRect().bottom>pr.bottom+0.5;
+      });
+    }
+    rep.push(r);
+  });
+  window.__report={pages:rep,units:unitStart,total:pages.length};
+}
+
+/* Conferencia do contrato com o editor do portal. Tudo tem de dar zero/true. */
+function contrato(){
+  var todas=[].slice.call(document.querySelectorAll('.page'));
+  var c={
+    folhas:todas.length,
+    foraDoLivro:todas.filter(function(p){return p.parentNode!==livro;}).length,
+    foraDoPapel:todas.filter(function(p){var r=p.getBoundingClientRect(); return Math.abs(r.width-1080)>1||Math.abs(r.height-1920)>1;}).length,
+    escuraSemFundo:todas.filter(function(p){return p.classList.contains('dark')&&getComputedStyle(p).backgroundColor!=='rgb(43, 21, 120)';}).length,
+    estouradas:window.__report.pages.filter(function(r){return r.over||r.oversize;}).map(function(r){return r.n;}),
+    abaixoDe70:window.__report.pages.filter(function(r){
+      return r.fill!==undefined&&r.fill<70&&!r.fim&&r.kind!=='toc';
+    }).map(function(r){return r.n;}),
+    recursoExterno:[].slice.call(document.querySelectorAll('img[src],link[href],script[src],source[src]')).filter(function(e){return /^https?:/i.test(e.getAttribute('src')||e.getAttribute('href')||'');}).length,
+    depositoSobrou:!!document.getElementById('dep')
+  };
+  c.ok=c.foraDoLivro===0&&c.foraDoPapel===0&&c.escuraSemFundo===0&&c.estouradas.length===0&&c.recursoExterno===0&&!c.depositoSobrou;
+  window.__contrato=c;
+}
+
+var rodou=false;
+function arrancar(){ if(rodou) return; rodou=true; try{ run(); }catch(e){ console.error(e); window.__err=String(e&&e.stack||e); } }
+Promise.race([
+  document.fonts.load("400 40px Literata")
+    .then(function(){ return document.fonts.load("700 40px Literata"); })
+    .then(function(){ return document.fonts.load("700 44px 'Plus Jakarta Sans'"); })
+    .then(function(){ return document.fonts.load("800 44px 'Plus Jakarta Sans'"); })
+    .then(function(){ return document.fonts.ready; }),
+  new Promise(function(ok){ setTimeout(ok,3000); })
+]).then(arrancar,arrancar);
+setTimeout(arrancar,4000);
+})();
+</script>
+</body></html>
